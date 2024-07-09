@@ -96,4 +96,7 @@ class Card {
         System.out.printf("%-20s %-15s %-10s %-10s %-10s\n", dateTime, cardHolderName, type, amount, balance);
     }
   }
+  public void changePassword(int newPin){
+    pin=newPin;
+  }
 }

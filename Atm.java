@@ -77,7 +77,7 @@ class Atm{
           return;
         }
         while(true){
-          System.out.println("press\n1.Check balance\n2.withdraw\n3.deposit\n4.transaction history\nEnter \"exit\" to close.");
+          System.out.println("press\n1.Check balance\n2.withdraw\n3.deposit\n4.transaction history\n5.change pin number\nEnter \"exit\" to close.");
           atmOptions=sc.next();
           switch (atmOptions) {
             case "1":
@@ -95,6 +95,17 @@ class Atm{
               break;
             case "4":
               existingCard.viewTransaction();
+              break;
+            case "5":
+              int oldPin,newPin;
+              System.out.println("Enter old pin:");
+              oldPin=sc.nextInt();
+              if(oldPin ==existingCard.getPin()){
+                System.out.println("Enter new pin:");
+                newPin=sc.nextInt();
+                existingCard.changePassword(newPin);
+              }
+              else System.out.println("incorrect pin");
               break;
             case "exit":
               System.out.println("Thank u! visit again.");
